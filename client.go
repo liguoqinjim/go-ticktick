@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-
 	"github.com/carlmjohnson/requests"
 	"github.com/tidwall/gjson"
 )
@@ -55,9 +54,9 @@ func NewClient(userName, passWord, server string) (*Client, error) {
 	}
 
 	client := &Client{UserName: userName, PassWord: passWord, baseUrlV2: baseUrlV2, projectName2Id: make(map[string]string), id2ProjectName: make(map[string]string)}
-	if err := client.Init(); err != nil {
-		return nil, err
-	}
+	//if err := client.Init(); err != nil {
+	//	return nil, err
+	//}
 	return client, nil
 }
 
@@ -70,6 +69,10 @@ func (c *Client) Init() error {
 		return err
 	}
 	return nil
+}
+
+func (c *Client) SetToken(token string) {
+	c.loginToken = token
 }
 
 // get the ticktick token
