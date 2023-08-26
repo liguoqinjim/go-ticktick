@@ -1,4 +1,4 @@
-module github.com/ziyixi/go-ticktick
+module github.com/liguoqinjim/go-ticktick
 
 go 1.19
 
